@@ -1,0 +1,8 @@
+{
+  "name": "Remix MyVault Personal Organizer",
+  "description": "A secure, offline-first personal document manager to store identity records, family information, and services on your device.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
