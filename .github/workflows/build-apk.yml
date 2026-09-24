@@ -18,8 +18,11 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      # ubuntu-latest runners already ship with the Android SDK preinstalled
+      # (via ANDROID_HOME). We just need to accept the licenses so Gradle/AGP
+      # is allowed to auto-download any missing platform/build-tools pieces.
+      - name: Accept Android SDK licenses
+        run: yes | "${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager" --licenses || true
 
       # This project's debug signing config points at a "debug.keystore" file
       # that is intentionally left out of the repo (see .gitignore). We
